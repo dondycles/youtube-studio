@@ -1,11 +1,12 @@
 "use client";
+import Overview from "@/components/analytics/overview";
 import Revenue from "@/components/analytics/revenue";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function Analytics() {
   const tabs = [
-    { name: "Overview", content: <></> },
+    { name: "Overview", content: <Overview /> },
     { name: "Content", content: <></> },
     { name: "Audience", content: <></> },
     { name: "Revenue", content: <Revenue /> },
@@ -33,7 +34,7 @@ export default function Analytics() {
       {tabs.map((tab) => {
         return (
           <TabsContent
-            className="w-full max-h-full h-screen "
+            className="w-full h-full"
             key={tab.name}
             value={tab.name.toLocaleLowerCase()}
           >
