@@ -22,7 +22,7 @@ import {
   XAxis,
   YAxis,
 } from "recharts";
-import { ArrowDownCircle, Dot } from "lucide-react";
+import { ArrowDownCircle, Dot, Video } from "lucide-react";
 
 export default function Overview() {
   const [api, setApi] = useState<CarouselApi>();
@@ -77,11 +77,14 @@ export default function Overview() {
           })}
         </div>
       </div>
-      <Card>
+      <Card className="w-full">
         <CardHeader>
           <CardTitle>Top content</CardTitle>
           <CardDescription>Views Last 28 Days</CardDescription>
         </CardHeader>
+        <CardContent className="space-y-2 w-full">
+          <TopContent />
+        </CardContent>
       </Card>
     </div>
   );
@@ -289,5 +292,51 @@ function Slide3() {
         </ResponsiveContainer>
       </CardContent>
     </Card>
+  );
+}
+function TopContent() {
+  const data = [
+    {
+      title:
+        "He liked it! 😜🤣 #couples #couplegoals #relationships #marriedlife #funny",
+      views: "2.1M",
+    },
+    {
+      title:
+        "Christina Perri - A Thousand Years | Piano Cover with Strings (with Lyrics & PIANO SHEET)",
+      views: "211.1k",
+    },
+    {
+      title:
+        "Ruth B. - Dandelions | Piano Cover with Strings (with Lyrics & PIANO SHEET)",
+      views: "102.1M",
+    },
+    {
+      title:
+        "The Greatest Showman - Rewrite The Stars | Piano Cover with Strings (with PIANO SHEETS)",
+      views: "97.1k",
+    },
+    {
+      title:
+        "The Greatest Showman - A Million Dreams | Piano Cover with Strings (with PIANO SHEET)",
+      views: "82.6K",
+    },
+  ];
+  return (
+    <div className="space-y-2 w-full">
+      {data.map((d) => {
+        return (
+          <div key={d.title} className="grid grid-cols-5 gap-2 ">
+            <div className="aspect-video bg-zinc-900 rounded-xl"></div>
+            <div className=" col-span-4 grid grid-cols-4 ">
+              <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-nowrap col-span-3 my-auto">
+                {d.title}
+              </p>
+              <p className="text-right my-auto">{d.views}</p>
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 }
