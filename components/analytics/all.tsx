@@ -22,6 +22,7 @@ import { toPhDate } from "@/lib/phdate";
 
 export default function All() {
   const currentDate = new Date(toPhDate());
+  const currentRevenue = 55713;
   const monthNames = [
     "January",
     "February",
@@ -73,20 +74,19 @@ export default function All() {
     return { month };
   });
   const last6monthsAmt = [
-    { amt: 38182 },
-    { amt: 55713 },
+    { amt: 38675 },
+    { amt: currentRevenue },
     { amt: 54345 },
     { amt: 55312 },
     { amt: 53323 },
     { amt: 52123 },
   ];
-
   return (
     <div className="space-y-2 w-full h-screen ">
       <Card>
         <CardHeader>
           <CardDescription>Estimated Revenue</CardDescription>
-          <CardTitle>{usePhpPeso(56)}K</CardTitle>
+          <CardTitle>{usePhpPeso(currentRevenue)}K</CardTitle>
         </CardHeader>
         <CardContent>
           <ResponsiveContainer width="100%" height={400}>
@@ -108,7 +108,7 @@ export default function All() {
         <CardContent className="space-y-6">
           {last6months.map((month, i) => {
             return (
-              <div>
+              <div className="space-y-1">
                 <div className="flex flex-row justify-between text-sm">
                   <p>
                     {monthNames[month.month - 1]}
@@ -116,7 +116,6 @@ export default function All() {
                   </p>
                   <p>{usePhpPeso(last6monthsAmt[i].amt)}</p>
                 </div>
-
                 <Progress
                   value={(last6monthsAmt[i].amt / 100000) * 100}
                   className="h-2 w-full"
