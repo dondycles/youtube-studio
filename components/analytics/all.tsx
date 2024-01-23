@@ -108,7 +108,7 @@ export default function All() {
         <CardContent className="space-y-6">
           {last6months.map((month, i) => {
             return (
-              <div className="space-y-1">
+              <div key={month.month} className="space-y-1">
                 <div className="flex flex-row justify-between text-sm">
                   <p>
                     {monthNames[month.month - 1]}

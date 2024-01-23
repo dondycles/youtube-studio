@@ -14,6 +14,8 @@ import {
 } from "../ui/card";
 import { useEffect, useState } from "react";
 import {
+  Bar,
+  BarChart,
   CartesianGrid,
   Line,
   LineChart,
@@ -86,6 +88,25 @@ export default function Overview() {
           <TopContent />
         </CardContent>
       </Card>
+      <Card className="w-full">
+        <CardHeader>
+          <div className="grid grid-cols-2">
+            <div>
+              <CardTitle>Real Time</CardTitle>
+              <br />
+              <CardTitle>249,532</CardTitle>
+              <CardDescription>Views 48 hours</CardDescription>
+            </div>
+            <div>
+              <RealTimeBarChat />
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-2 w-full">
+          <RealTime />
+        </CardContent>
+      </Card>
+      <RealTimeBarChat />
     </div>
   );
 }
@@ -338,5 +359,107 @@ function TopContent() {
         );
       })}
     </div>
+  );
+}
+function RealTime() {
+  const data = [
+    {
+      title:
+        "He liked it! 😜🤣 #couples #couplegoals #relationships #marriedlife #funny",
+      views: "2.1M",
+    },
+    {
+      title:
+        "Christina Perri - A Thousand Years | Piano Cover with Strings (with Lyrics & PIANO SHEET)",
+      views: "211.1k",
+    },
+    {
+      title:
+        "Ruth B. - Dandelions | Piano Cover with Strings (with Lyrics & PIANO SHEET)",
+      views: "102.1M",
+    },
+    {
+      title:
+        "The Greatest Showman - Rewrite The Stars | Piano Cover with Strings (with PIANO SHEETS)",
+      views: "97.1k",
+    },
+    {
+      title:
+        "The Greatest Showman - A Million Dreams | Piano Cover with Strings (with PIANO SHEET)",
+      views: "82.6K",
+    },
+  ];
+  return (
+    <div className="space-y-2 w-full">
+      {data.map((d) => {
+        return (
+          <div key={d.title} className="grid grid-cols-5 gap-2 ">
+            <div className="aspect-video bg-zinc-900 rounded-xl"></div>
+            <div className=" col-span-4 grid grid-cols-4 gap-2">
+              <p className="w-full overflow-hidden text-ellipsis whitespace-nowrap text-nowrap col-span-2 my-auto">
+                {d.title}
+              </p>
+              <p className="text-center my-auto">{d.views}</p>
+              <div>
+                <RealTimeBarChat />
+              </div>
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  );
+}
+function RealTimeBarChat() {
+  const data = [
+    {},
+    { name: "1", amt: 3942 },
+    { name: "2", amt: 2072 },
+    { name: "3", amt: 2802 },
+    { name: "4", amt: 2326 },
+    { name: "5", amt: 3205 },
+    { name: "6", amt: 2650 },
+    { name: "7", amt: 3910 },
+    { name: "8", amt: 2023 },
+    { name: "9", amt: 2598 },
+    { name: "10", amt: 3948 },
+    { name: "11", amt: 3647 },
+    { name: "12", amt: 3089 },
+    { name: "13", amt: 4284 },
+    { name: "14", amt: 3781 },
+    { name: "15", amt: 4251 },
+    { name: "16", amt: 2739 },
+    { name: "17", amt: 4298 },
+    { name: "18", amt: 2623 },
+    { name: "19", amt: 4332 },
+    { name: "20", amt: 3333 },
+    { name: "21", amt: 2426 },
+    { name: "22", amt: 2523 },
+    { name: "23", amt: 3573 },
+    { name: "24", amt: 4234 },
+    { name: "25", amt: 2051 },
+    { name: "26", amt: 3700 },
+    { name: "27", amt: 2940 },
+    { name: "28", amt: 2355 },
+    { name: "29", amt: 3031 },
+    { name: "30", amt: 2135 },
+  ];
+  // for (let i = 1; i <= 30; i++) {
+  //   const performance = Math.random() * 120; // Generate a random performance less than 5%
+  //   const amt = Math.floor(2000 + performance * 20); // Adjust the base value for amt based on performance
+
+  //   data.push({
+  //     name: i.toString(),
+  //     amt: amt,
+  //   });
+  // }
+
+  // console.log(data);
+  return (
+    <ResponsiveContainer width="100%" height="100%">
+      <BarChart data={data}>
+        <Bar dataKey="amt" fill="#8884d8" />
+      </BarChart>
+    </ResponsiveContainer>
   );
 }
