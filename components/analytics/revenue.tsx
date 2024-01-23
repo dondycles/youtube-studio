@@ -21,7 +21,7 @@ export default function Revenue() {
   const [selectedTab, setSelectedTab] = useState("All");
 
   return (
-    <div className="h-full w-full space-y-2 font-poppins pb-14 overflow-auto">
+    <div className="h-full w-full space-y-2 font-poppins overflow-auto pb-12">
       <div className="flex flex-row gap-2 w-full pr-4 overflow-auto">
         {tabs.map((tab) => {
           return (
@@ -35,8 +35,7 @@ export default function Revenue() {
           );
         })}
       </div>
-
-      {selectedTab === "All" && <All />}
+      <div>{selectedTab === "All" && <All />}</div>
     </div>
   );
 }
