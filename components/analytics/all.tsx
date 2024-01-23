@@ -82,15 +82,15 @@ export default function All() {
     { amt: 52123 },
   ];
   return (
-    <div className="space-y-2 w-full h-screen ">
-      <Card>
-        <CardHeader>
+    <div className="space-y-2 w-full h-full">
+      <Card className="min-w-0">
+        <CardHeader className="min-w-0">
           <CardDescription>Estimated Revenue</CardDescription>
-          <CardTitle>{usePhpPeso(currentRevenue)}K</CardTitle>
+          <CardTitle>{usePhpPeso(currentRevenue)}</CardTitle>
         </CardHeader>
-        <CardContent>
-          <ResponsiveContainer width="100%" height={400}>
-            <LineChart width={500} height={300} data={estimatedRevenue}>
+        <CardContent className="min-w-0">
+          <ResponsiveContainer width="100%" height={350}>
+            <LineChart data={estimatedRevenue}>
               <CartesianGrid strokeDasharray="3 3" />
               <XAxis dataKey="name" />
               <YAxis />

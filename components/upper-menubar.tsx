@@ -7,7 +7,7 @@ export default function UpperMenuBar() {
     <nav className="w-full h-fit flex flex-row p-2 border-border border-b-[1px] border-solid font-poppins">
       <h1 className="flex flex-row items-center justify-center">
         <Youtube className="w-12 h-12 " fill="red" strokeWidth={1.5} />
-        <span className="font-semibold text-3xl">Studio</span>
+        <span className="font-semibold text-xl sm:text-3xl">Studio</span>
       </h1>
       <div className="flex flex-row items-center h-full flex-1 justify-end gap-2">
         <Button size={"icon"} variant={"ghost"}>

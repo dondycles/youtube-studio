@@ -18,8 +18,14 @@ export default function Analytics() {
       <TabsList className="w-full border-solid ">
         {tabs.map((tab) => {
           return (
-            <TabsTrigger key={tab.name} value={tab.name.toLocaleLowerCase()}>
-              {tab.name}
+            <TabsTrigger
+              className="w-fit min-w-0"
+              key={tab.name}
+              value={tab.name.toLocaleLowerCase()}
+            >
+              <span className="text-ellipsis overflow-hidden whitespace-nowrap w-full">
+                {tab.name}
+              </span>
             </TabsTrigger>
           );
         })}
@@ -31,12 +37,7 @@ export default function Analytics() {
             key={tab.name}
             value={tab.name.toLocaleLowerCase()}
           >
-            <ScrollArea
-              className="max-h-full h-screen w-full"
-              scrollHideDelay={1}
-            >
-              {tab.content}
-            </ScrollArea>
+            {tab.content}
           </TabsContent>
         );
       })}

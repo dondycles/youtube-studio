@@ -15,7 +15,7 @@ export default function BottomMenuBar() {
         <LayoutDashboard
           absoluteStrokeWidth
           strokeWidth={1.5}
-          className="w-8 h-8"
+          className="w-4 h-4 sm:w-8 sm:h-8"
         />
       ),
       name: "Dashboard",
@@ -23,14 +23,22 @@ export default function BottomMenuBar() {
     },
     {
       icon: (
-        <PlaySquare absoluteStrokeWidth strokeWidth={1.5} className="w-8 h-8" />
+        <PlaySquare
+          absoluteStrokeWidth
+          strokeWidth={1.5}
+          className="w-4 h-4 sm:w-8 sm:h-8"
+        />
       ),
       name: "Content",
       link: "/content",
     },
     {
       icon: (
-        <BarChart4 absoluteStrokeWidth strokeWidth={1.5} className="w-8 h-8" />
+        <BarChart4
+          absoluteStrokeWidth
+          strokeWidth={1.5}
+          className="w-4 h-4 sm:w-8 sm:h-8"
+        />
       ),
       name: "Analytics",
       link: "/analytics",
@@ -40,7 +48,7 @@ export default function BottomMenuBar() {
         <MessageSquareText
           absoluteStrokeWidth
           strokeWidth={1.5}
-          className="w-8 h-8"
+          className="w-4 h-4 sm:w-8 sm:h-8"
         />
       ),
       name: "Comments",
@@ -48,7 +56,11 @@ export default function BottomMenuBar() {
     },
     {
       icon: (
-        <DollarSign absoluteStrokeWidth strokeWidth={1.5} className="w-8 h-8" />
+        <DollarSign
+          absoluteStrokeWidth
+          strokeWidth={1.5}
+          className="w-4 h-4 sm:w-8 sm:h-8"
+        />
       ),
       name: "Earn",
       link: "/earn",
@@ -61,7 +73,7 @@ export default function BottomMenuBar() {
         return (
           <Button
             key={m.name}
-            className="p-2 box-content flex-1 text-center"
+            className="p-2 box-content flex-1 text-center min-w-0"
             asChild
             variant={"ghost"}
           >
