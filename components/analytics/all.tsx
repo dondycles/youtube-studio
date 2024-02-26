@@ -22,7 +22,7 @@ import { toPhDate } from "@/lib/phdate";
 
 export default function All() {
   const currentDate = new Date(toPhDate());
-  const currentRevenue = 55713;
+  const currentRevenue = 56533;
   const monthNames = [
     "January",
     "February",
@@ -74,12 +74,12 @@ export default function All() {
     return { month };
   });
   const last6monthsAmt = [
-    { amt: 38675 },
+    { amt: 34261 },
     { amt: currentRevenue },
+    { amt: 55713 },
     { amt: 54345 },
     { amt: 55312 },
     { amt: 53323 },
-    { amt: 52123 },
   ];
   return (
     <div className="space-y-2 w-full h-full">
